@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DarkThemeApp.Pages.MainPage">
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Buttons}" 
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedButton}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Margin="20"
+                        >
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="25" Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button Style ="{StaticResource buttonStyle}" 
+                            Text="{Binding Name}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Style ="{StaticResource buttonStyle}" 
+                            Text="{Binding Name}"/>
+    </ContentPage.Content>
+</ContentPage>
