@@ -21,9 +21,9 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
+
             <Button Style="{StaticResource buttonStyle}"
-                    Text="{Binding Name}"
+                    Text="{Binding Name}"/>
 
         </StackLayout>
     </ContentPage.Content>
