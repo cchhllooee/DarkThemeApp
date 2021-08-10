@@ -2,27 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DarkThemeApp.Pages.MainPage"
-             Title="{Binding Name}"
              Style="{StaticResource PageAppBindingStyle}">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center"
-                     VerticalOptions="Center">
-            <CollectionView ItemsSource="{Binding Buttons}" 
-                        SelectionMode="Single"
-                        SelectedItem="{Binding SelectedButton, Mode=TwoWay}"
-                        Margin="20"
-                        >
+        <StackLayout>
+            <CollectionView 
+                ItemsSource="{Binding Buttons}" 
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedButton, Mode=TwoWay}"
+                HorizontalOptions="EndAndExpand"
+                Margin="25">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="20" Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Label Style ="{StaticResource LabelAppBindingStyle}" 
-                            Text="{Binding Name}"/>
+                        <StackLayout>
+                            <Frame Style ="{StaticResource FrameStyle}">
+                                <Label 
+                                Style ="{StaticResource labelStyle}" 
+                                Text="{Binding Name}"/>
+                        </Frame>
+                        </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

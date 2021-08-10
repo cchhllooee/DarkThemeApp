@@ -48,8 +48,7 @@ namespace DarkThemeApp.PageModels
                 {
                     selectedButton = value;
 
-                    //Sets Title for when the button is clicked
-                    Name = SelectedButton.Name;
+                    //Sets theme when pressed
                     Theme = selectedButton.Theme;
 
                     ThemeHelper.SetTheme();

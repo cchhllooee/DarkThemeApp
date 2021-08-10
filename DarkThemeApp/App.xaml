@@ -4,27 +4,25 @@
              x:Class="DarkThemeApp.App">
     <Application.Resources>
         <ResourceDictionary>
-            
-            <!--Colours-->
-            <Color x:Key="DarkGrey">#002024</Color>
-            <Color x:Key="LightGrey">#999999</Color>
 
             <Style x:Key="labelStyle" TargetType="Label">
-                <Setter Property="HeightRequest" Value="50"/>
-                <Setter Property="WidthRequest" Value="150"/>
-                <Setter Property="FontSize" Value="Medium"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-            </Style>
-
-            <Style x:Key="LabelAppBindingStyle" TargetType="Label" BasedOn="{StaticResource labelStyle}">
+                <Setter Property="FontSize" Value="Title"/>
                 <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark= Black, Light= White}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Proxima Nova"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             </Style>
 
             <Style x:Key="PageAppBindingStyle" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
             </Style>
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BorderColor" Value="{AppThemeBinding Dark=White, Light=Black}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
+            </Style>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
