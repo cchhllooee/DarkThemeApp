@@ -7,19 +7,23 @@
             
             <!--Colours-->
             <Color x:Key="DarkGrey">#002024</Color>
-            <Color x:Key="LightGrey">##999999</Color>
+            <Color x:Key="LightGrey">#999999</Color>
 
-            <Style x:Key="buttonStyle" TargetType="Button">
-                <Setter Property="CornerRadius" Value="30"/>
+            <Style x:Key="labelStyle" TargetType="Label">
                 <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="WidthRequest" Value="150"/>
                 <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="BorderWidth" Value="{AppThemeBinding Dark=None, Light=10,Default=10}"/>
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black,Default=Black}"/>
-                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource DarkGrey}, Light=Transparent, Default=White}"/>
-                <Setter Property="BorderColor" Value="{AppThemeBinding Dark=None, Light=Black, Default=Black }"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="LabelAppBindingStyle" TargetType="Label" BasedOn="{StaticResource labelStyle}">
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark=White, Light=Black}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark= Black, Light= White}"/>
+            </Style>
+
+            <Style x:Key="PageAppBindingStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -5,16 +5,12 @@ namespace DarkThemeApp.Helpers
 {
     public static class ThemeHelper
     {
-        public enum ThemeChoices
-        {
-            Random
-        }
         public static void SetTheme()
         {
             switch(MainPageModel.Theme)
             {
                 case 0:
-                    App.Current.UserAppTheme = T.Unspecified;
+                    App.Current.UserAppTheme = OSAppTheme.Unspecified;
                     break;
 
                 case 1:

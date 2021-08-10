@@ -14,10 +14,11 @@ namespace DarkThemeApp
         {
             InitializeComponent();
 
-            ThemeHelper.SetTheme();
             var page = FreshPageModelResolver.ResolvePageModel<MainPageModel>();
             var basicNavContainer = new FreshNavigationContainer(page);
             MainPage = basicNavContainer;
+
+            ThemeHelper.SetTheme();
         }
 
         protected override void OnStart()
@@ -42,7 +43,7 @@ namespace DarkThemeApp
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 ThemeHelper.SetTheme();
-            })
+            });
         }
     }
 }
