@@ -8,5 +8,6 @@ namespace DarkThemeApp.Models
     {
         public string Name { get; set; }
         public int Theme { get; set; }
+        public string Image { get; set; }
     }
 }

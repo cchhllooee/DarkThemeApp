@@ -43,14 +43,12 @@ namespace DarkThemeApp.PageModels
             get => selectedButton;
             set
             {
-                
                 if (selectedButton != value)
                 {
                     selectedButton = value;
 
                     //Sets theme when pressed
                     Theme = selectedButton.Theme;
-
                     ThemeHelper.SetTheme();
                 }
             }
@@ -95,9 +93,9 @@ namespace DarkThemeApp.PageModels
         {
             ObservableCollection<ButtonModel> buttonsList = new ObservableCollection<ButtonModel>();
 
-            buttonsList.Add(new ButtonModel() { Name = AppResources.System, Theme = 0 });
-            buttonsList.Add(new ButtonModel() { Name = AppResources.Light, Theme = 1});
-            buttonsList.Add(new ButtonModel() { Name = AppResources.Dark, Theme = 2});
+            buttonsList.Add(new ButtonModel() { Name = AppResources.System, Theme = 0, Image = "settingsicon" });
+            buttonsList.Add(new ButtonModel() { Name = AppResources.Light, Theme = 1, Image = "lighticon" });
+            buttonsList.Add(new ButtonModel() { Name = AppResources.Dark, Theme = 2, Image = "darkicon" });
 
             Buttons = buttonsList;
         }
