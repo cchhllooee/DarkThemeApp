@@ -19,7 +19,6 @@ namespace DarkThemeApp.PageModels
         public MainPageModel()
         {
             SetUpButtons();
-            
         }
 
         //Properties
@@ -33,8 +32,6 @@ namespace DarkThemeApp.PageModels
                 RaisePropertyChanged(nameof(Buttons));
             }
         }
-
-        bool isSelected { get; set; }
             
         private ButtonModel selectedButton;
 
@@ -43,7 +40,6 @@ namespace DarkThemeApp.PageModels
             get => selectedButton;
             set
             {
-                isSelected = true;
                 if (selectedButton != value)
                 {
                     selectedButton = value;
@@ -51,13 +47,7 @@ namespace DarkThemeApp.PageModels
                     //Sets theme when pressed
                     Theme = selectedButton.Theme;
                     ThemeHelper.SetTheme();
-                    
-                    //Handles image changes
-                    if(isSelected == true && (selectedButton.Image != ThemeHelper.ImageName))
-                    {
-                        selectedButton.Image = ThemeHelper.ImageName;
-                        isSelected = false; 
-                    }
+                   
                 }
             }
         }
@@ -70,33 +60,7 @@ namespace DarkThemeApp.PageModels
             set => Preferences.Set(nameof(Theme), value);
         }
 
-        //Color rainbowColour;
-        //public Color RainbowColour
-        //{
-        //    get => rainbowColour;
-        //    set
-        //    {
-        //        rainbowColour = value;
-        //    }
-
-        //}
-
-        //Commands
-        //ICommand rainbowCommand;
-        //public ICommand RainbowCommand =>
-        //    rainbowCommand ?? (rainbowCommand = new Command( async () => ExecuteRainbowCommand(), () => canExecuteRainbowCommand));
-
-        //private bool canExecuteRainbowCommand { get; set; } = true;
-
-        //private void SetCanExecuteRainbowCommand(bool val)
-        //{
-        //    canExecuteRainbowCommand = val;
-        //    (RainbowCommand as Command).ChangeCanExecute();
-        //}
-
-
         //Methods
-
         public void SetUpButtons()
         {
             ObservableCollection<ButtonModel> buttonsList = new ObservableCollection<ButtonModel>();
@@ -107,23 +71,5 @@ namespace DarkThemeApp.PageModels
 
             Buttons = buttonsList;
         }
-
-        //private Color ExecuteRainbowCommand()
-        //{
-        //    SetCanExecuteRainbowCommand(false);
-        //    var random = new Random();
-        //    var colour1 = random.Next(0, 255);
-        //    var colour2 = random.Next(0, 255);
-        //    var colour3 = random.Next(0, 255);
-
-        //    var newColour = Color.FromRgb(colour1, colour2, colour3);
-
-        //    SetCanExecuteRainbowCommand(true);
-        //    return newColour;
-            
-        //}
-
-        //Text
-        //public string Random => AppResources.Random;
     }
 }

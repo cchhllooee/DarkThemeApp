@@ -8,17 +8,32 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Dark Theme App :)" Style="{StaticResource labelStyle}"/>
             <CollectionView 
                 ItemsSource="{Binding Buttons}" 
                 SelectionMode="Single"
                 SelectedItem="{Binding SelectedButton, Mode=TwoWay}"
-                Margin="25">
+                Margin="25"
+                BackgroundColor="Transparent">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="20" Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Style ="{StaticResource FrameStyle}">
+                        <StackLayout BackgroundColor="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroupList>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="Transparent" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateGroupList>
+                            </VisualStateManager.VisualStateGroups>
+                            <Frame Style ="{StaticResource FrameStyle}" CornerRadius="20">
                             <StackLayout 
                                 Orientation="Vertical"
                                 Spacing="10">
@@ -33,7 +48,8 @@
                                 Style ="{StaticResource labelStyle}" 
                                 Text="{Binding Name}"/>
                             </StackLayout>
-                        </Frame>
+                            </Frame>
+                        </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
