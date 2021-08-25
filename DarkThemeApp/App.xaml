@@ -6,10 +6,11 @@
         <ResourceDictionary>
 
             <Color x:Key="gold">#e9c80d</Color>
+            <Color x:Key="lightBlue">#0aa5f5</Color>
             
-            <Style x:Key="labelStyle" TargetType="Label">
+            <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Title"/>
-                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource gold}, Light=LightBlue}"/>
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource gold}, Light={StaticResource lightBlue}}"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontFamily" Value="Proxima Nova"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
@@ -22,8 +23,21 @@
             </Style>
 
             <Style x:Key="FrameStyle" TargetType="Frame">
-                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource gold}, Light=LightBlue}"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource gold}, Light={StaticResource lightBlue}}"/>
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource gold}, Light={StaticResource lightBlue}}"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="Proxima Nova"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding Dark={StaticResource gold}, Light={StaticResource lightBlue}}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="CornerRadius" Value="10"/>
             </Style>
             
         </ResourceDictionary>

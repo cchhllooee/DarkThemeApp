@@ -65,9 +65,9 @@ namespace DarkThemeApp.PageModels
         {
             ObservableCollection<ButtonModel> buttonsList = new ObservableCollection<ButtonModel>();
 
-            buttonsList.Add(new ButtonModel() { Name = AppResources.System, Theme = 0, Image = "settingsicon",});
-            buttonsList.Add(new ButtonModel() { Name = AppResources.Light, Theme = 1, Image = "lighticon" });
-            buttonsList.Add(new ButtonModel() { Name = AppResources.Dark, Theme = 2, Image = "darkicon" });
+            buttonsList.Add(new ButtonModel() { Name = AppResources.System, Theme = 0, Image = "settingsicon_filled",});
+            buttonsList.Add(new ButtonModel() { Name = AppResources.Light, Theme = 1, Image = "lighticon_filled" });
+            buttonsList.Add(new ButtonModel() { Name = AppResources.Dark, Theme = 2, Image = "darkicon_filled" });
 
             Buttons = buttonsList;
         }

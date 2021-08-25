@@ -8,7 +8,7 @@
              NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Dark Theme App :)" Style="{StaticResource labelStyle}"/>
+            <Label Text="Dark Theme App :)" Style="{StaticResource LabelStyle}"/>
             <CollectionView 
                 ItemsSource="{Binding Buttons}" 
                 SelectionMode="Single"
@@ -45,7 +45,7 @@
                                     </ffimageloading:CachedImage.Transformations>
                                 </ffimageloading:CachedImage>
                                 <Label 
-                                Style ="{StaticResource labelStyle}" 
+                                Style ="{StaticResource LabelStyle}" 
                                 Text="{Binding Name}"/>
                             </StackLayout>
                             </Frame>
@@ -53,6 +53,8 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button Text="Click me for a surprise"
+                    Style="{StaticResource ButtonStyle}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
