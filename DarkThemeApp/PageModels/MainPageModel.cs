@@ -71,5 +71,6 @@ namespace DarkThemeApp.PageModels
 
             Buttons = buttonsList;
         }
+
     }
 }

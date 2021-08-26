@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:controls="clr-namespace:DarkThemeApp.Controls"
              x:Class="DarkThemeApp.Pages.MainPage"
              Style="{StaticResource PageAppBindingStyle}"
              NavigationPage.HasNavigationBar="false">
@@ -16,11 +17,11 @@
                 Margin="25"
                 BackgroundColor="Transparent">
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="20" Orientation="Vertical"/>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout BackgroundColor="Transparent">
+                        <StackLayout>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroupList>
                                     <VisualStateGroup x:Name="CommonStates">
@@ -39,7 +40,7 @@
                                 Spacing="10">
                                 <ffimageloading:CachedImage 
                                     Source="{Binding Image}"
-                                    HeightRequest="70">
+                                    HeightRequest="30">
                                     <ffimageloading:CachedImage.Transformations>
                                         <fftransformations:TintTransformation EnableSolidColor="True" HexColor="#e9c80d"/>
                                     </ffimageloading:CachedImage.Transformations>
@@ -54,7 +55,22 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <Button Text="Click me for a surprise"
-                    Style="{StaticResource ButtonStyle}"/>
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Button_Clicked"/>
+            
+            <!--- this is for the bottom modal sheet-->
+            <controls:BottomSheetControl x:Name="Sheet"
+                                         SheetHeight="300">
+                <controls:BottomSheetControl.SheetContent>
+                    <StackLayout>
+                        <Grid>
+                            <Label HorizontalTextAlignment="Center"
+                                   Text="This is a bottom modal sheet! Swipe me down when you're done :)"
+                                   Style="{StaticResource LabelStyle}"/>
+                        </Grid>
+                    </StackLayout>
+                </controls:BottomSheetControl.SheetContent>
+            </controls:BottomSheetControl>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

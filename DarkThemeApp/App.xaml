@@ -7,6 +7,7 @@
 
             <Color x:Key="gold">#e9c80d</Color>
             <Color x:Key="lightBlue">#0aa5f5</Color>
+            <Color x:Key="DarkGrey">#3e3e42</Color>
             
             <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Title"/>
