@@ -4,6 +4,7 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:controls="clr-namespace:DarkThemeApp.Controls"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="DarkThemeApp.Pages.MainPage"
              Style="{StaticResource PageAppBindingStyle}"
              NavigationPage.HasNavigationBar="false">
@@ -62,13 +63,7 @@
             <controls:BottomSheetControl x:Name="Sheet"
                                          SheetHeight="300">
                 <controls:BottomSheetControl.SheetContent>
-                    <StackLayout>
-                        <Grid>
-                            <Label HorizontalTextAlignment="Center"
-                                   Text="This is a bottom modal sheet! Swipe me down when you're done :)"
-                                   Style="{StaticResource LabelStyle}"/>
-                        </Grid>
-                    </StackLayout>
+                    <Image Source="surprise.gif" IsAnimationPlaying="True"/>
                 </controls:BottomSheetControl.SheetContent>
             </controls:BottomSheetControl>
         </StackLayout>

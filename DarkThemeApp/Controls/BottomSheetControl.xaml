@@ -25,9 +25,7 @@
                    HeightRequest="{Binding SheetHeight, Source={x:Reference BottomSheetRef}}"
                    VerticalOptions="End"
                    BackgroundColor="{AppThemeBinding Dark=Black, Light=White}"
-                   CornerRadius="5"
-                   HasShadow="False"
-                   BorderColor="{AppThemeBinding Dark={StaticResource gold}, Light={StaticResource lightBlue}}">
+                   HasShadow="False">
                 </Frame>
             </controls:PanContainer>
         </Grid>

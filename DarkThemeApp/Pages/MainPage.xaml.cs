@@ -19,8 +19,19 @@ namespace DarkThemeApp.Pages
             InitializeComponent();
         }
 
+        bool isVisible;
+        public bool IsVisible
+        {
+            get => isVisible;
+            set
+            {
+                isVisible = value;
+                OnPropertyChanged();
+            }
+        } 
         private async void Button_Clicked(object sender, EventArgs e)
         {
+            IsVisible = Sheet.IsVisible;
             try
             {
                 await Sheet.OpenSheet();

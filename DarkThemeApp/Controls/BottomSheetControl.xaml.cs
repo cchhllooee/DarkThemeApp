@@ -63,7 +63,6 @@ namespace DarkThemeApp.Controls
             get { return (View)GetValue(SheetContentProperty); }
             set { SetValue(SheetContentProperty, value); OnPropertyChanged(); }
         }
-
         #endregion
 
         //long int that later on helps with the transition - maybe the transition should be dealt with in a service?
@@ -113,6 +112,7 @@ namespace DarkThemeApp.Controls
         {
             try
             {
+                IsVisible = true;
                 //change to async this task.whenall thing is weird 
                 await Task.WhenAll
                 (
@@ -136,6 +136,7 @@ namespace DarkThemeApp.Controls
         {
             try
             {
+                IsVisible = false;
                 await Task.WhenAll
                 (
                     //the fading has been complete and now needs to leave
